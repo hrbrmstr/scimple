@@ -1,0 +1,14 @@
+Package: scimple
+Title: scimple TITLE
+Version: 0.1.0
+Encoding: UTF-8
+Authors@R: c(person("Bob", "Rudis", role = c("aut", "cre"), email = "bob@rud.is"))
+Maintainer: Bob Rudis <bob@rud.is>
+Description: scimple DESCRIPTION
+Depends: R (>= 3.2.0)
+License: AGPL
+URL: https://github.com/hrbrmstr/scimple
+BugReports: https://github.com/hrbrmstr/scimple/issues
+LazyData: true
+Suggests: testthat
+Imports: purrr
