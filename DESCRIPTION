@@ -1,14 +1,26 @@
 Package: scimple
-Title: scimple TITLE
+Title: Tidy Simultaneous Confidence Intervals for Multinomial Proportions
 Version: 0.1.0
 Encoding: UTF-8
-Authors@R: c(person("Bob", "Rudis", role = c("aut", "cre"), email = "bob@rud.is"))
+Authors@R: c(
+      person("Bob", "Rudis", role = c("aut", "cre"), email = "bob@rud.is"),
+      person("M", "Subbiah", role = c("aut"), comment = c("Original package author"))
+    )
 Maintainer: Bob Rudis <bob@rud.is>
-Description: scimple DESCRIPTION
-Depends: R (>= 3.2.0)
-License: AGPL
+Description: Methods for obtaining simultaneous confidence intervals for multinomial 
+    proportions have been proposed by many authors and the present study include a variety 
+    of widely applicable procedures. Seven classical methods (Wilson, Quesenberry and 
+    Hurst, Goodman, Wald with and without continuity correction, Fitzpatrick and Scott, 
+    Sison and Glaz) and Bayesian Dirichlet models are included in the package. The 
+    advantage of MCMC pack has been exploited to derive the Dirichlet posterior directly 
+    and this also helps in handling the Dirichlet prior parameters. This package is 
+    prepared to have equal and unequal values for the Dirichlet prior distribution that 
+    will provide better scope for data analysis and associated sensitivity analysis.
+Depends: R (>= 3.2.0), MCMCpack
+License: GPL-2
 URL: https://github.com/hrbrmstr/scimple
 BugReports: https://github.com/hrbrmstr/scimple/issues
 LazyData: true
 Suggests: testthat
-Imports: purrr
+Imports: dplyr, tibble, stats, purrr
+RoxygenNote: 6.0.1

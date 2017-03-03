@@ -2,11 +2,22 @@
 output: rmarkdown::github_document
 ---
 
-scimple : Tools to ...
+scimple : Tidy Simultaneous Confidence Interval for Multinomial Proportion
+
+This is a tidy version of the `CoinMinD` R package with some extra bits tossed in for good measure.
 
 The following functions are implemented:
 
-The following data sets are included:
+- `scimple_ci`: Calculate multiple simultaneous confidence intervals using selected methods (excluding Bayesian methods)
+- `scimp_bmde`:	Bayesian Multinomial Dirichlet Model (Equal Prior)
+- `scimp_bmdu`:	Bayesian Multinomial Dirichlet Model (Unequal Prior)
+- `scimp_fs`:	Fitzpatrick and Scott Confidence Interval
+- `scimp_goodman`:	Goodman Confidence Interval
+- `scimp_qh`:	Quesenberry & Hurst Confidence Interval
+- `scimp_sg`:	Sison & Glaz Confidence Interval
+- `scimp_wald`:	Wald Confidence Interval
+- `scimp_waldcc`:	Wald Confidence Interval (with continuity correction)
+- `scimp_wilson`:	Wilson Confidence Interval
 
 ### Installation
 
@@ -20,12 +31,30 @@ options(width=120)
 
 ### Usage
 
-```{r message=FALSE, warning=FALSE, error=FALSE}
+```{r message=FALSE, warning=FALSE, error=FALSE, fig.width=10, fig.height=5.5, fig.retina=2}
 library(scimple)
+library(hrbrthemes)
+library(tidyverse)
 
 # current verison
 packageVersion("scimple")
 
+y <- c(44,55,43,32,67,78)
+z <- 0.05
+
+cis <- scimple_ci(y, z)
+
+print(cis)
+
+ggplot(cis) +
+  geom_segment(aes(x=lower_limit, xend=upper_limit, y=method, yend=method, color=method)) +
+  scale_color_ipsum(name=NULL) +
+  facet_wrap(~inpmat, scales="free_x") +
+  labs(x=NULL, y=NULL, 
+       title="Multipe simultaneous confidence intervals",
+       subtitle="Note free X scale") +
+  theme_ipsum_rc(grid="X") +
+  theme(legend.position="bottom")
 ```
 
 ### Test Results
