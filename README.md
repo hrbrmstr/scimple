@@ -1,5 +1,5 @@
 
-scimple : Simultaneous Confidence Interval for Multinomial Proportion
+`scimple` : Tidy Simultaneous Confidence Interval for Multinomial Proportion
 
 This is a tidy version of the `CoinMinD` R package with some extra bits tossed in for good measure.
 
@@ -20,10 +20,6 @@ The following functions are implemented:
 
 ``` r
 devtools::install_github("hrbrmstr/scimple")
-```
-
-``` r
-options(width=120)
 ```
 
 ### Usage
@@ -86,7 +82,7 @@ library(testthat)
 date()
 ```
 
-    ## [1] "Fri Mar  3 14:36:17 2017"
+    ## [1] "Fri Mar  3 14:42:51 2017"
 
 ``` r
 test_dir("tests/")
