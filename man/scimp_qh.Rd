@@ -2,7 +2,7 @@
 % Please edit documentation in R/qh.r
 \name{scimp_qh}
 \alias{scimp_qh}
-\title{Quesenberry and Hurst Confidence Interval}
+\title{Quesenberry & Hurst Confidence Interval}
 \usage{
 scimp_qh(inpmat, alpha)
 }

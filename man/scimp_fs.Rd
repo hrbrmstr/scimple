@@ -2,7 +2,7 @@
 % Please edit documentation in R/fitz-scott.r
 \name{scimp_fs}
 \alias{scimp_fs}
-\title{Fitzpatrick and Scott Confidence Interval}
+\title{Fitzpatrick & Scott Confidence Interval}
 \usage{
 scimp_fs(inpmat, alpha)
 }

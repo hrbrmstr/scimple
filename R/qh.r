@@ -1,4 +1,4 @@
-#' Quesenberry and Hurst Confidence Interval
+#' Quesenberry & Hurst Confidence Interval
 #'
 #' The simultaneous confidence interval for multinomial proportions based on the method proposed in Quesenberry and Hurst (1964)
 #'
