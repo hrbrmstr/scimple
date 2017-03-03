@@ -1,4 +1,4 @@
-#' Fitzpatrick and Scott Confidence Interval
+#' Fitzpatrick & Scott Confidence Interval
 #'
 #' The simultaneous confidence interval for multinomial proportions based on the method proposed in Fitzpatrick and Scott (1987)
 #'

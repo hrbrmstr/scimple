@@ -2,7 +2,7 @@
 output: rmarkdown::github_document
 ---
 
-`scimple` : Tidy Simultaneous Confidence Interval for Multinomial Proportion
+`scimple` : Tidy Simultaneous Confidence Intervals for Multinomial Proportions
 
 This is a tidy version of the `CoinMinD` R package with some extra bits tossed in for good measure.
 
@@ -11,13 +11,16 @@ The following functions are implemented:
 - `scimple_ci`: Calculate multiple simultaneous confidence intervals using selected methods (excluding Bayesian methods)
 - `scimp_bmde`:	Bayesian Multinomial Dirichlet Model (Equal Prior)
 - `scimp_bmdu`:	Bayesian Multinomial Dirichlet Model (Unequal Prior)
-- `scimp_fs`:	Fitzpatrick and Scott Confidence Interval
+- `scimp_fs`:	Fitzpatrick & Scott Confidence Interval
 - `scimp_goodman`:	Goodman Confidence Interval
 - `scimp_qh`:	Quesenberry & Hurst Confidence Interval
 - `scimp_sg`:	Sison & Glaz Confidence Interval
 - `scimp_wald`:	Wald Confidence Interval
 - `scimp_waldcc`:	Wald Confidence Interval (with continuity correction)
 - `scimp_wilson`:	Wilson Confidence Interval
+
+There's also a handy named vector `scimple_short_to_long` which you can use to expand
+shorthand method names (e.g. "sg") to long (e.g. "Sison & Glaz").
 
 ### Installation
 
@@ -42,7 +45,8 @@ packageVersion("scimple")
 y <- c(44,55,43,32,67,78)
 z <- 0.05
 
-cis <- scimple_ci(y, z)
+scimple_ci(y, z) %>% 
+  mutate(method=scimple_short_to_long[method]) -> cis
 
 print(cis)
 
@@ -53,7 +57,7 @@ ggplot(cis) +
   labs(x=NULL, y=NULL, 
        title="Multipe simultaneous confidence intervals",
        subtitle="Note free X scale") +
-  theme_ipsum_rc(grid="X") +
+  theme_ipsum_rc(grid="X", base_size=11) +
   theme(legend.position="bottom")
 ```
 
