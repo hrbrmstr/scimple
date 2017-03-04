@@ -2,6 +2,9 @@
 output: rmarkdown::github_document
 ---
 
+[![Travis-CI Build Status](https://travis-ci.org/hrbrmstr/scimple.svg?branch=master)](https://travis-ci.org/hrbrmstr/scimple)
+[![Coverage Status](https://img.shields.io/codecov/c/github/hrbrmstr/scimple/master.svg)](https://codecov.io/github/hrbrmstr/scimple?branch=master)
+
 `scimple` : Tidy Simultaneous Confidence Intervals for Multinomial Proportions
 
 This is a tidy version of the `CoinMinD` R package with some extra bits tossed in for good measure.
@@ -42,7 +45,7 @@ library(tidyverse)
 # current verison
 packageVersion("scimple")
 
-y <- c(44,55,43,32,67,78)
+y <- c(44, 55, 43, 32, 67, 78)
 z <- 0.05
 
 scimple_ci(y, z) %>% 
