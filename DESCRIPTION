@@ -21,6 +21,7 @@ License: GPL-2
 URL: https://github.com/hrbrmstr/scimple
 BugReports: https://github.com/hrbrmstr/scimple/issues
 LazyData: true
-Suggests: testthat
+Suggests: testthat,
+    covr
 Imports: dplyr, tibble, stats, purrr
 RoxygenNote: 6.0.1

@@ -1,4 +1,6 @@
 
+[![Travis-CI Build Status](https://travis-ci.org/hrbrmstr/scimple.svg?branch=master)](https://travis-ci.org/hrbrmstr/scimple) [![Coverage Status](https://img.shields.io/codecov/c/github/hrbrmstr/scimple/master.svg)](https://codecov.io/github/hrbrmstr/scimple?branch=master)
+
 `scimple` : Tidy Simultaneous Confidence Intervals for Multinomial Proportions
 
 This is a tidy version of the `CoinMinD` R package with some extra bits tossed in for good measure.
@@ -38,7 +40,7 @@ packageVersion("scimple")
     ## [1] '0.1.0'
 
 ``` r
-y <- c(44,55,43,32,67,78)
+y <- c(44, 55, 43, 32, 67, 78)
 z <- 0.05
 
 scimple_ci(y, z) %>% 
@@ -85,13 +87,13 @@ library(testthat)
 date()
 ```
 
-    ## [1] "Fri Mar  3 17:03:13 2017"
+    ## [1] "Sat Mar  4 00:16:16 2017"
 
 ``` r
 test_dir("tests/")
 ```
 
     ## testthat results ========================================================================================================
-    ## OK: 0 SKIPPED: 0 FAILED: 0
+    ## OK: 16 SKIPPED: 0 FAILED: 0
     ## 
     ## DONE ===================================================================================================================
