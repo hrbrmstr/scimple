@@ -8,4 +8,10 @@
 \usage{
 scimple_short_to_long
 }
+\description{
+Useful for charts/reports
+}
+\examples{
+scimple_short_to_long[c("waldcc", "sg", "qh")]
+}
 \keyword{datasets}
