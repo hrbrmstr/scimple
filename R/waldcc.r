@@ -32,7 +32,7 @@ scimp_waldcc <- function(inpmat, alpha) {
   ci_length <- adj_ul - adj_ll
   volume <- round(prod(ci_length), 8)
 
-  data_frame(
+  tibble(
     method = "waldcc",
     lower_limit = waldcc_ll,
     upper_limit = waldcc_ul,
