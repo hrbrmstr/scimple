@@ -4,8 +4,7 @@ Version: 0.1.0
 Encoding: UTF-8
 Authors@R: c(
       person("Bob", "Rudis", role = c("aut", "cre"), email = "bob@rud.is"),
-      person("M", "Subbiah", role = c("aut"), comment = c("Original package author")),
-	  person("Danilo", "Zocco", role = c("ctd"))
+      person("M", "Subbiah", role = c("aut"), comment = c("Original package author"))
     )
 Maintainer: Bob Rudis <bob@rud.is>
 Description: Methods for obtaining simultaneous confidence intervals for multinomial 
