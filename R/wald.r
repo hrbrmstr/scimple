@@ -35,7 +35,7 @@ scimp_wald <- function(inpmat, alpha) {
   ci_length <- adj_ul - adj_ll
   volume <- round(prod(ci_length), 8)
 
-  data_frame(
+  tibble(
     method = "wald",
     lower_limit = wald_ll,
     upper_limit = wald_ul,
