@@ -33,7 +33,7 @@ scimp_fs <- function(inpmat, alpha) {
   ci_length <- adj_ul - adj_ll
   volume <- round(prod(ci_length), 8)
 
-  data_frame(
+  tibble(
     method = "fs",
     lower_limit = fs_ll,
     upper_limit = fs_ul,
