@@ -33,7 +33,7 @@ scimp_qh <- function(inpmat, alpha) {
   ci_length <- adj_ul - adj_ll
   volume <- round(prod(ci_length), 8)
 
-  data_frame(
+  tibble(
     method = "qh",
     lower_limit = qh_ll,
     upper_limit = qh_ul,

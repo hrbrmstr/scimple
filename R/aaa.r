@@ -93,7 +93,7 @@ SG <- function(x, alpha) {
   diA <- ULA - LLA##FIND LENGTH OF CIs
   VOL <- round(prod(diA), 8)##PRODUCT OF LENGTH OF CIs
 
-  data_frame(
+  tibble(
     method = "sg",
     lower_limit = LL,
     upper_limit = UL,
@@ -131,7 +131,7 @@ BMDU <- function(x, d, seed=1492) {
       diff[j] <- u[j] - l[j]
     }
 
-    data_frame(
+    tibble(
       method = "bmdu",
       lower_limit = l,
       upper_limit = m,
@@ -141,7 +141,7 @@ BMDU <- function(x, d, seed=1492) {
 
   } else {
     warning('Size of the division should be less than the size of the input matrix')
-    data_frame(
+    tibble(
       method = "bmdu",
       lower_limit = l,
       upper_limit = m,

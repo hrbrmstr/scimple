@@ -33,7 +33,7 @@ scimp_goodman <- function(inpmat, alpha) {
   ci_length <- adj_ul - adj_ll
   volume <- round(prod(ci_length), 8)
 
-  data_frame(
+  tibble(
     method = "goodman",
     lower_limit = goodman_ll,
     upper_limit = goodman_ul,
