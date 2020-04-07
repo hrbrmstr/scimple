@@ -35,7 +35,7 @@ scimp_bmde <- function(x, p, seed=1492) {
     dif[j] <- u[j] - l[j]
   }
 
-  data_frame(
+  tibble(
     method = "bmde",
     lower_limit = l,
     upper_limit = u,
