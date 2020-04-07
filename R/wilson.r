@@ -33,7 +33,7 @@ scimp_wilson <- function(inpmat, alpha) {
   ci_length <- adj_ul - adj_ll
   volume <- round(prod(ci_length), 8)
 
-  data_frame(
+  tibble(
     method = "wilson",
     lower_limit = wilson_ll,
     upper_limit = wilson_ul,
