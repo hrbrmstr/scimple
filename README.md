@@ -5,7 +5,7 @@ developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.re
 [![Signed
 by](https://img.shields.io/badge/Keybase-Verified-brightgreen.svg)](https://keybase.io/hrbrmstr)
 ![Signed commit
-%](https://img.shields.io/badge/Signed_Commits-30%25-lightgrey.svg)
+%](https://img.shields.io/badge/Signed_Commits-100%25-lightgrey.svg)
 [![Linux build
 Status](https://travis-ci.org/hrbrmstr/scimple.svg?branch=master)](https://travis-ci.org/hrbrmstr/scimple)
 [![Coverage
@@ -60,7 +60,15 @@ Glaz”).
 Package installation:
 
 ``` r
+install.packages("scimple", repos = c("https://cinc.rud.is", "https://cloud.r-project.org/"))
+# or
+remotes::install_git("https://git.rud.is/hrbrmstr/scimple.git")
+# or
+remotes::install_git("https://git.sr.ht/~hrbrmstr/scimple")
+# or
 remotes::install_gitlab("hrbrmstr/scimple")
+# or
+remotes::install_bitbucket("hrbrmstr/scimple")
 # or
 remotes::install_github("hrbrmstr/scimple")
 ```
