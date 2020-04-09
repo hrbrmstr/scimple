@@ -4,7 +4,9 @@
 \name{scimple_short_to_long}
 \alias{scimple_short_to_long}
 \title{Simple tranlsation table from method shorthand to full method name}
-\format{An object of class \code{character} of length 7.}
+\format{
+An object of class \code{character} of length 7.
+}
 \usage{
 scimple_short_to_long
 }

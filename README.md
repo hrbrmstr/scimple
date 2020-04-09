@@ -1,30 +1,72 @@
 
-[![Travis-CI Build Status](https://travis-ci.org/hrbrmstr/scimple.svg?branch=master)](https://travis-ci.org/hrbrmstr/scimple) [![Coverage Status](https://img.shields.io/codecov/c/github/hrbrmstr/scimple/master.svg)](https://codecov.io/github/hrbrmstr/scimple?branch=master)
+[![Project Status: Active – The project has reached a stable, usable
+state and is being actively
+developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
+[![Signed
+by](https://img.shields.io/badge/Keybase-Verified-brightgreen.svg)](https://keybase.io/hrbrmstr)
+![Signed commit
+%](https://img.shields.io/badge/Signed_Commits-30%25-lightgrey.svg)
+[![Linux build
+Status](https://travis-ci.org/hrbrmstr/scimple.svg?branch=master)](https://travis-ci.org/hrbrmstr/scimple)
+[![Coverage
+Status](https://codecov.io/gh/hrbrmstr/scimple/branch/master/graph/badge.svg)](https://codecov.io/gh/hrbrmstr/scimple)
+![Minimal R
+Version](https://img.shields.io/badge/R%3E%3D-3.2.0-blue.svg)
+![License](https://img.shields.io/badge/License-GPL-2-blue.svg)
 
-`scimple` : Tidy Simultaneous Confidence Intervals for Multinomial Proportions
+# scimple
 
-This is a tidy version of the `CoinMinD` R package with some extra bits tossed in for good measure.
+Tidy Simultaneous Confidence Intervals for Multinomial Proportions
+
+## Description
+
+Methods for obtaining simultaneous confidence intervals for multinomial
+proportions have been proposed by many authors and the present study
+include a variety of widely applicable procedures. Seven classical
+methods (Wilson, Quesenberry and Hurst, Goodman, Wald with and without
+continuity correction, Fitzpatrick and Scott, Sison and Glaz) and
+Bayesian Dirichlet models are included in the package. The advantage of
+MCMC pack has been exploited to derive the Dirichlet posterior directly
+and this also helps in handling the Dirichlet prior parameters. This
+package is prepared to have equal and unequal values for the Dirichlet
+prior distribution that will provide better scope for data analysis and
+associated sensitivity analysis.
+
+## What’s Inside The Tin
 
 The following functions are implemented:
 
--   `scimple_ci`: Calculate multiple simultaneous confidence intervals using selected methods (excluding Bayesian methods)
--   `scimp_bmde`: Bayesian Multinomial Dirichlet Model (Equal Prior)
--   `scimp_bmdu`: Bayesian Multinomial Dirichlet Model (Unequal Prior)
--   `scimp_fs`: Fitzpatrick & Scott Confidence Interval
--   `scimp_goodman`: Goodman Confidence Interval
--   `scimp_qh`: Quesenberry & Hurst Confidence Interval
--   `scimp_sg`: Sison & Glaz Confidence Interval
--   `scimp_wald`: Wald Confidence Interval
--   `scimp_waldcc`: Wald Confidence Interval (with continuity correction)
--   `scimp_wilson`: Wilson Confidence Interval
+  - `scimp_bmde`: Bayesian Multinomial Dirichlet Model (Equal Prior)
+  - `scimp_bmdu`: Bayesian Multinomial Dirichlet Model (Unequal Prior)
+  - `scimp_fs`: Fitzpatrick & Scott Confidence Interval
+  - `scimp_goodman`: Goodman Confidence Interval
+  - `scimp_qh`: Quesenberry & Hurst Confidence Interval
+  - `scimp_sg`: Sison & Glaz Confidence Interval
+  - `scimp_wald`: Wald Confidence Interval
+  - `scimp_waldcc`: Wald Confidence Interval (with continuity
+    correction)
+  - `scimp_wilson`: Wilson Confidence Interval
+  - `scimple_ci`: Calculate multiple simultaneous confidence intervals
+    using selected methods (excluding Bayesian methods)
+  - `scimple_short_to_long`: Simple tranlsation table from method
+    shorthand to full method name
 
-There's also a handy named vector `scimple_short_to_long` which you can use to expand shorthand method names (e.g. "sg") to long (e.g. "Sison & Glaz").
+There’s also a handy named vector `scimple_short_to_long` which you can
+use to expand shorthand method names (e.g. “sg”) to long (e.g. “Sison &
+Glaz”).
 
 ### Installation
 
+Package installation:
+
 ``` r
-devtools::install_github("hrbrmstr/scimple")
+remotes::install_gitlab("hrbrmstr/scimple")
+# or
+remotes::install_github("hrbrmstr/scimple")
 ```
+
+NOTE: To use the ‘remotes’ install options you will need to have the
+[{remotes} package](https://github.com/r-lib/remotes) installed.
 
 ### Usage
 
@@ -33,13 +75,6 @@ library(scimple)
 library(hrbrthemes)
 library(tidyverse)
 
-# current verison
-packageVersion("scimple")
-```
-
-    ## [1] '0.1.0'
-
-``` r
 y <- c(44, 55, 43, 32, 67, 78)
 z <- 0.05
 
@@ -47,24 +82,21 @@ scimple_ci(y, z) %>%
   mutate(method=scimple_short_to_long[method]) -> cis
 
 print(cis)
-```
+## # A tibble: 42 x 8
+##    method              lower_limit upper_limit adj_ll adj_ul     volume inpmat alpha
+##    <chr>                     <dbl>       <dbl>  <dbl>  <dbl>      <dbl>  <dbl> <dbl>
+##  1 Fitzpatrick & Scott      0.0831       0.193 0.0831  0.193 0.00000175     44  0.05
+##  2 Fitzpatrick & Scott      0.118        0.227 0.118   0.227 0.00000175     55  0.05
+##  3 Fitzpatrick & Scott      0.0799       0.190 0.0799  0.190 0.00000175     43  0.05
+##  4 Fitzpatrick & Scott      0.0454       0.155 0.0454  0.155 0.00000175     32  0.05
+##  5 Fitzpatrick & Scott      0.155        0.265 0.155   0.265 0.00000175     67  0.05
+##  6 Fitzpatrick & Scott      0.190        0.299 0.190   0.299 0.00000175     78  0.05
+##  7 Goodman                  0.0947       0.197 0.0947  0.197 0.00000155     44  0.05
+##  8 Goodman                  0.124        0.235 0.124   0.235 0.00000155     55  0.05
+##  9 Goodman                  0.0921       0.193 0.0921  0.193 0.00000155     43  0.05
+## 10 Goodman                  0.0641       0.154 0.0641  0.154 0.00000155     32  0.05
+## # … with 32 more rows
 
-    ## # A tibble: 42 × 8
-    ##                 method lower_limit upper_limit     adj_ll    adj_ul   volume inpmat alpha
-    ##                  <chr>       <dbl>       <dbl>      <dbl>     <dbl>    <dbl>  <dbl> <dbl>
-    ## 1  Fitzpatrick & Scott  0.08306258   0.1927995 0.08306258 0.1927995 1.75e-06     44  0.05
-    ## 2  Fitzpatrick & Scott  0.11754534   0.2272823 0.11754534 0.2272823 1.75e-06     55  0.05
-    ## 3  Fitzpatrick & Scott  0.07992778   0.1896647 0.07992778 0.1896647 1.75e-06     43  0.05
-    ## 4  Fitzpatrick & Scott  0.04544502   0.1551819 0.04544502 0.1551819 1.75e-06     32  0.05
-    ## 5  Fitzpatrick & Scott  0.15516289   0.2648998 0.15516289 0.2648998 1.75e-06     67  0.05
-    ## 6  Fitzpatrick & Scott  0.18964565   0.2993826 0.18964565 0.2993826 1.75e-06     78  0.05
-    ## 7              Goodman  0.09468368   0.1966413 0.09468368 0.1966413 1.55e-06     44  0.05
-    ## 8              Goodman  0.12376893   0.2350489 0.12376893 0.2350489 1.55e-06     55  0.05
-    ## 9              Goodman  0.09208527   0.1931040 0.09208527 0.1931040 1.55e-06     43  0.05
-    ## 10             Goodman  0.06412671   0.1535697 0.06412671 0.1535697 1.55e-06     32  0.05
-    ## # ... with 32 more rows
-
-``` r
 ggplot(cis) +
   geom_segment(aes(x=lower_limit, xend=upper_limit, y=method, yend=method, color=method)) +
   scale_color_ipsum(name=NULL) +
@@ -76,24 +108,17 @@ ggplot(cis) +
   theme(legend.position="bottom")
 ```
 
-<img src="README_files/figure-markdown_github/unnamed-chunk-3-1.png" width="960" />
+<img src="man/figures/README-u01-1.png" width="960" />
 
-### Test Results
+## scimple Metrics
 
-``` r
-library(scimple)
-library(testthat)
+| Lang | \# Files |  (%) | LoC |  (%) | Blank lines |  (%) | \# Lines |  (%) |
+| :--- | -------: | ---: | --: | ---: | ----------: | ---: | -------: | ---: |
+| R    |       16 | 0.94 | 438 | 0.95 |         104 | 0.85 |      185 | 0.86 |
+| Rmd  |        1 | 0.06 |  23 | 0.05 |          19 | 0.15 |       29 | 0.14 |
 
-date()
-```
+## Code of Conduct
 
-    ## [1] "Sat Mar  4 00:21:15 2017"
-
-``` r
-test_dir("tests/")
-```
-
-    ## testthat results ========================================================================================================
-    ## OK: 16 SKIPPED: 0 FAILED: 0
-    ## 
-    ## DONE ===================================================================================================================
+Please note that this project is released with a Contributor Code of
+Conduct. By participating in this project you agree to abide by its
+terms.

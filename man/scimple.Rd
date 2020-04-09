@@ -3,7 +3,6 @@
 \docType{package}
 \name{scimple}
 \alias{scimple}
-\alias{scimple-package}
 \title{Simultaneous Confidence Intervals for Multinomial Proportions}
 \description{
 Methods for obtaining simultaneous confidence intervals for multinomial proportions have

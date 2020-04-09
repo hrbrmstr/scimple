@@ -4,13 +4,16 @@
 \alias{scimple_ci}
 \title{Calculate multiple simultaneous confidence intervals using selected methods (excluding Bayesian methods)}
 \usage{
-scimple_ci(inpmat, alpha, methods = c("fs", "goodman", "qh", "sg", "wald",
-  "waldcc", "wilson"))
+scimple_ci(
+  inpmat,
+  alpha,
+  methods = c("fs", "goodman", "qh", "sg", "wald", "waldcc", "wilson")
+)
 }
 \arguments{
 \item{inpmat}{the cell counts of given contingency tables corresponding to categorical data}
 
-\item{alpha}{a number in \code{[0..1]} to get the upper 100(1-\code{alpha}) percentage point of the chi square distribution}
+\item{alpha}{a number in \verb{[0..1]} to get the upper 100(1-\code{alpha}) percentage point of the chi square distribution}
 
 \item{methods}{character vector of one or more methods to run over the input parameters}
 }

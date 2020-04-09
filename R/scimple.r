@@ -23,9 +23,17 @@ scimple_ci <- function(inpmat, alpha,
   methods <- match.arg(methods, c("fs", "goodman", "qh", "sg", "wald", "waldcc", "wilson"),
                        several.ok=TRUE)
 
-  map_df(methods, function(func) {
-    df <- ci_funcs[[func]](inpmat, alpha)
-    mutate(df, inpmat=inpmat, alpha=alpha)
-  })
+  lapply(methods, function(func) {
+    xdf <- ci_funcs[[func]](inpmat, alpha)
+    xdf[["inpmat"]] <- inpmat
+    xdf[["alpha"]] <- alpha
+    xdf
+  }) -> out
+
+  out <- do.call(rbind.data.frame, out)
+
+  class(out) <- c("tbl_df", "tbl", "data.frame")
+
+  out
 
 }

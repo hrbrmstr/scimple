@@ -9,7 +9,7 @@ scimp_qh(inpmat, alpha)
 \arguments{
 \item{inpmat}{the cell counts of given contingency tables corresponding to categorical data}
 
-\item{alpha}{a number in \code{[0..1]} to get the upper 100(1-\code{alpha}) percentage point of the chi square distribution}
+\item{alpha}{a number in \verb{[0..1]} to get the upper 100(1-\code{alpha}) percentage point of the chi square distribution}
 }
 \value{
 \code{tibble} with original and adjusted limits of multinomial proportions together with product of length of k intervals as volume of simultaneous confidence intervals

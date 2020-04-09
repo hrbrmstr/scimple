@@ -13,7 +13,5 @@
 #' @name scimple
 #' @docType package
 #' @author Dr M.Subbiah [primary], Bob Rudis (bob@@rud.is) [tidy version]
-#' @import tibble stats MCMCpack
-#' @importFrom dplyr mutate select
-#' @importFrom purrr map map_df
+#' @import stats MCMCpack
 NULL
